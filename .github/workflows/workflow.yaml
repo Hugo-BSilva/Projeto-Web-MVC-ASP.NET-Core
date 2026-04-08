@@ -25,7 +25,9 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for better analysis
       - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqube-scan-action@v5.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY }}  # Substitua pelo seu project key
+          SONAR_ORGANIZATION: ${{ vars.SONAR_ORGANIZATION }}  # Substitua pela sua organização
