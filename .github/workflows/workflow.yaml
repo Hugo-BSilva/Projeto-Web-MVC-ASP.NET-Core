@@ -27,7 +27,5 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarqube-scan-action@v5.0.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY }}  # Substitua pelo seu project key
-          SONAR_ORGANIZATION: ${{ vars.SONAR_ORGANIZATION }}  # Substitua pela sua organização
+        # As propriedades do projeto são lidas do arquivo sonar-project.properties na raiz do repositório.
